@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Product Listing</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .product-card {
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .card-img-top {
+            height: 250px;
+            object-fit: cover;
+            padding: 1rem;
+            background-color: #fff;
+            border-bottom: 1px solid #eee;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-4">
+        <div class="container">
+            <a class="navbar-brand" href="#"><i class="bi bi-shop me-2"></i>MugStore</a>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="container mb-5">
+        
+        <!-- Header and Filters -->
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-3">
+            <h2 class="mb-0">Product Catalog</h2>
+            
+            <div class="d-flex gap-2">
+                <!-- Category Filter Dropdown -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="categoryFilter" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-funnel me-1"></i> Category
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="categoryFilter">
+                        <li><a class="dropdown-item" href="#">All Products</a></li>
+                        <li><a class="dropdown-item" href="#">Ceramic Mugs</a></li>
+                        <li><a class="dropdown-item" href="#">Travel Mugs</a></li>
+                        <li><a class="dropdown-item" href="#">Glassware</a></li>
+                    </ul>
+                </div>
+
+                <!-- Sort Dropdown -->
+                <div class="dropdown">
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="sortFilter" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="bi bi-sort-down me-1"></i> Sort By
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="sortFilter">
+                        <li><a class="dropdown-item" href="#">Best Sellers</a></li>
+                        <li><a class="dropdown-item" href="#">Price: Low to High</a></li>
+                        <li><a class="dropdown-item" href="#">Price: High to Low</a></li>
+                        <li><a class="dropdown-item" href="#">Newest Arrivals</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-xl-4 g-4">
+            
+            <!-- Product 1 -->
+            <div class="col">
+                <div class="card h-100 product-card">
+                    <span class="badge bg-warning position-absolute mt-2 ms-2 top-0 start-0">Bestseller</span>
+                    <img src="https://images.unsplash.com/photo-1514228742587-6b1558fcca3d?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="White Ceramic Mug">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Classic White Mug</h5>
+                        <p class="card-text text-muted small">Standard 11oz ceramic mug.</p>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$4.40</span>
+                                <button class="btn btn-sm btn-primary"><i class="bi bi-cart-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 2 -->
+            <div class="col">
+                <div class="card h-100 product-card">
+                    <span class="badge bg-primary position-absolute mt-2 ms-2 top-0 start-0">New</span>
+                    <img src="https://images.unsplash.com/photo-1577937927133-66ef06acdf18?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Black Matte Mug">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Matte Black Mug</h5>
+                        <p class="card-text text-muted small">Sleek 15oz design with inner color.</p>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$6.88</span>
+                                <button class="btn btn-sm btn-primary"><i class="bi bi-cart-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 3 -->
+            <div class="col">
+                <div class="card h-100 product-card">
+                    <img src="https://images.unsplash.com/photo-1481833761820-0509d3217039?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Travel Mug">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Stainless Travel Mug</h5>
+                        <p class="card-text text-muted small">Keep your drinks hot on the go.</p>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$12.50</span>
+                                <button class="btn btn-sm btn-primary"><i class="bi bi-cart-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product 4 -->
+            <div class="col">
+                <div class="card h-100 product-card">
+                    <span class="badge bg-warning position-absolute mt-2 ms-2 top-0 start-0">Bestseller</span>
+                    <img src="https://images.unsplash.com/photo-1574221764958-7e3bd82cc6fb?auto=format&fit=crop&w=400&q=80" class="card-img-top" alt="Accent Mug">
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">Accent Coffee Mug</h5>
+                        <p class="card-text text-muted small">Features colorful interior.</p>
+                        <div class="mt-auto">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="fs-5 fw-bold">$5.52</span>
+                                <button class="btn btn-sm btn-primary"><i class="bi bi-cart-plus"></i> Add</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

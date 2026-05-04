@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="authApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Angular Registration and Login</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            margin: 0;
+            padding: 0;
+        }
+        nav {
+            background-color: #333;
+            padding: 15px;
+            color: white;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        nav button {
+            background: none;
+            border: 1px solid white;
+            color: white;
+            padding: 8px 15px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+        nav button:hover {
+            background-color: white;
+            color: #333;
+        }
+        .container {
+            max-width: 400px;
+            margin: 40px auto;
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 10px;
+            background-color: #28a745;
+            border: none;
+            color: white;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .success {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+        }
+        .profile-card {
+            text-align: center;
+        }
+        .profile-card p {
+            font-size: 18px;
+            color: #555;
+        }
+    </style>
+</head>
+<body ng-controller="MainController">
+
+    <nav>
+        <button ng-click="navigate('login')" ng-hide="isLoggedIn()">Login</button>
+        <button ng-click="navigate('register')" ng-hide="isLoggedIn()">Register</button>
+        <button ng-click="navigate('profile')" ng-show="isLoggedIn()">Profile</button>
+        <button ng-click="logout()" ng-show="isLoggedIn()">Logout</button>
+    </nav>
+
+    <!-- Register Component -->
+    <div class="container" ng-show="view === 'register'" ng-controller="RegisterController">
+        <h2>User Registration</h2>
+        <form ng-submit="register()">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" ng-model="user.name" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" ng-model="user.email" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" ng-model="user.password" required>
+            </div>
+            <button type="submit" class="btn-submit">Register</button>
+        </form>
+        <p class="success" ng-show="successMsg">{{successMsg}}</p>
+        <p class="error" ng-show="errorMsg">{{errorMsg}}</p>
+    </div>
+
+    <!-- Login Component -->
+    <div class="container" ng-show="view === 'login'" ng-controller="LoginController">
+        <h2>User Login</h2>
+        <form ng-submit="login()">
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" ng-model="credentials.email" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" ng-model="credentials.password" required>
+            </div>
+            <button type="submit" class="btn-submit">Login</button>
+        </form>
+        <p class="error" ng-show="errorMsg">{{errorMsg}}</p>
+    </div>
+
+    <!-- Profile Component -->
+    <div class="container" ng-show="view === 'profile'" ng-controller="ProfileController">
+        <h2>User Profile</h2>
+        <div class="profile-card" ng-if="currentUser">
+            <p><strong>Name:</strong> {{currentUser.name}}</p>
+            <p><strong>Email:</strong> {{currentUser.email}}</p>
+            <p><em>Welcome to your dashboard!</em></p>
+        </div>
+    </div>
+
+    <script>
+        var app = angular.module('authApp', []);
+
+        // Service to handle authentication and user data
+        app.service('AuthService', function() {
+            var users = []; // Mock database
+            var loggedInUser = null;
+
+            this.registerUser = function(user) {
+                var exists = users.find(u => u.email === user.email);
+                if (exists) {
+                    return { success: false, message: 'User already exists with this email.' };
+                }
+                users.push(angular.copy(user));
+                return { success: true, message: 'Registration successful! Please login.' };
+            };
+
+            this.loginUser = function(email, password) {
+                var user = users.find(u => u.email === email && u.password === password);
+                if (user) {
+                    loggedInUser = user;
+                    return { success: true };
+                }
+                return { success: false, message: 'Invalid email or password.' };
+            };
+
+            this.logoutUser = function() {
+                loggedInUser = null;
+            };
+
+            this.getCurrentUser = function() {
+                return loggedInUser;
+            };
+
+            this.isLoggedIn = function() {
+                return loggedInUser !== null;
+            };
+        });
+
+        // Main Controller to handle navigation and global state
+        app.controller('MainController', function($scope, AuthService) {
+            $scope.view = 'login'; // 'login', 'register', 'profile'
+            
+            $scope.navigate = function(viewName) {
+                $scope.view = viewName;
+            };
+
+            $scope.isLoggedIn = function() {
+                return AuthService.isLoggedIn();
+            };
+
+            $scope.logout = function() {
+                AuthService.logoutUser();
+                $scope.navigate('login');
+            };
+        });
+
+        // Register Controller
+        app.controller('RegisterController', function($scope, AuthService) {
+            $scope.user = {};
+            
+            $scope.register = function() {
+                var result = AuthService.registerUser($scope.user);
+                if (result.success) {
+                    $scope.successMsg = result.message;
+                    $scope.errorMsg = null;
+                    $scope.user = {}; // Clear form
+                    // Automatically switch to login string after 1.5 seconds
+                    setTimeout(function() {
+                        $scope.$apply(function() {
+                            $scope.$parent.navigate('login');
+                            $scope.successMsg = null;
+                        });
+                    }, 1500);
+                } else {
+                    $scope.errorMsg = result.message;
+                    $scope.successMsg = null;
+                }
+            };
+        });
+
+        // Login Controller
+        app.controller('LoginController', function($scope, AuthService) {
+            $scope.credentials = {};
+            
+            $scope.login = function() {
+                var result = AuthService.loginUser($scope.credentials.email, $scope.credentials.password);
+                if (result.success) {
+                    $scope.credentials = {}; // Clear form
+                    $scope.errorMsg = null;
+                    $scope.$parent.navigate('profile'); // Send to profile on success
+                } else {
+                    $scope.errorMsg = result.message;
+                }
+            };
+        });
+
+        // Profile Controller
+        app.controller('ProfileController', function($scope, AuthService) {
+            // Watch for changes to the logged-in user to update the profile view
+            $scope.$watch(
+                function() { return AuthService.getCurrentUser(); },
+                function(newUser) {
+                    $scope.currentUser = newUser;
+                }
+            );
+        });
+    </script>
+</body>
+</html>

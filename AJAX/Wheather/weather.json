@@ -1,0 +1,32 @@
+{
+    "london": {
+        "temperature": "15°C",
+        "humidity": "70%",
+        "conditions": "Cloudy"
+    },
+    "paris": {
+        "temperature": "14°C",
+        "humidity": "65%",
+        "conditions": "Rainy"
+    },
+    "new york": {
+        "temperature": "18°C",
+        "humidity": "60%",
+        "conditions": "Sunny"
+    },
+    "mumbai": {
+        "temperature": "32°C",
+        "humidity": "80%",
+        "conditions": "Partly Cloudy"
+    },
+    "tokyo": {
+        "temperature": "22°C",
+        "humidity": "50%",
+        "conditions": "Clear"
+    },
+    "sydney": {
+        "temperature": "20°C",
+        "humidity": "55%",
+        "conditions": "Windy"
+    }
+}

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>My Portfolio</title>
+    
+    <!-- jQuery Mobile CSS Theme -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    
+    <!-- Custom CSS for Modern Aesthetic -->
+    <link rel="stylesheet" href="portfolio.css" />
+    
+    <!-- jQuery and jQuery Mobile JS -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+</head>
+<body>
+
+    <!-- ======================= -->
+    <!--     ABOUT ME PAGE       -->
+    <!-- ======================= -->
+    <div data-role="page" id="about" data-theme="a">
+        
+        <!-- Header with Navbar -->
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>Portfolio</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about" class="ui-btn-active ui-state-persist" data-icon="user">About Me</a></li>
+                    <li><a href="#projects" data-transition="slide" data-icon="grid">Projects</a></li>
+                    <li><a href="#skills" data-transition="slide" data-icon="star">Skills</a></li>
+                    <li><a href="#contact" data-transition="slide" data-icon="mail">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content (Centered) -->
+        <div role="main" class="ui-content center-content">
+            <div class="avatar-container">
+                <!-- Using an aesthetic generated avatar for demonstration -->
+                <img src="https://api.dicebear.com/7.x/avataaars/svg?seed=Felix&backgroundColor=b6e3f4" alt="Profile avatar" class="avatar-img">
+            </div>
+            
+            <h2 class="greeting">Hi, I'm John Doe</h2>
+            <p class="subtitle">A passionate Web Developer & UI/UX Designer</p>
+            
+            <p class="description">
+                I build clean, aesthetic, and functional web applications. 
+                Constantly learning and exploring new technologies.
+            </p>
+            
+            <a href="#projects" class="ui-btn ui-corner-all ui-shadow ui-btn-b action-btn">View My Work</a>
+        </div>
+
+        <!-- Footer -->
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4 class="footer-text">&copy; 2026 John Doe</h4>
+        </div>
+    </div>
+
+
+    <!-- ======================= -->
+    <!--      PROJECTS PAGE      -->
+    <!-- ======================= -->
+    <div data-role="page" id="projects" data-theme="a">
+        
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>My Projects</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about" data-transition="slide" data-direction="reverse" data-icon="user">About Me</a></li>
+                    <li><a href="#projects" class="ui-btn-active ui-state-persist" data-icon="grid">Projects</a></li>
+                    <li><a href="#skills" data-transition="slide" data-icon="star">Skills</a></li>
+                    <li><a href="#contact" data-transition="slide" data-icon="mail">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div role="main" class="ui-content">
+            <!-- Collapsible Sets for Projects -->
+            <div data-role="collapsibleset" data-theme="b" data-content-theme="a" class="custom-accordion">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>E-Commerce Dashboard</h3>
+                    <p><strong>Overview:</strong> A full-stack React application with real-time stats.</p>
+                    <p><strong>Tech Stack:</strong> React, Node.js, Express, MongoDB</p>
+                    <a href="#" class="ui-btn ui-corner-all ui-btn-b ui-shadow ui-mini mt-20" style="width: max-content; padding: 10px 20px;">View Live Demo</a>
+                </div>
+                
+                <div data-role="collapsible">
+                    <h3>Weather App</h3>
+                    <p><strong>Overview:</strong> A simple mobile web app showing live API weather data dynamically tailored to user location.</p>
+                    <p><strong>Tech Stack:</strong> HTML, CSS, JavaScript, OpenWeather API</p>
+                    <a href="#" class="ui-btn ui-corner-all ui-btn-b ui-shadow ui-mini mt-20" style="width: max-content; padding: 10px 20px;">View Live Demo</a>
+                </div>
+                
+                <div data-role="collapsible">
+                    <h3>Expense Tracker</h3>
+                    <p><strong>Overview:</strong> Manage daily expenses dynamically using local storage and interactive charts.</p>
+                    <p><strong>Tech Stack:</strong> Vue.js, LocalStorage, Chart.js</p>
+                    <a href="#" class="ui-btn ui-corner-all ui-btn-b ui-shadow ui-mini mt-20" style="width: max-content; padding: 10px 20px;">View Live Demo</a>
+                </div>
+            </div>
+        </div>
+        
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4 class="footer-text">&copy; 2026 John Doe</h4>
+        </div>
+    </div>
+
+
+    <!-- ======================= -->
+    <!--       SKILLS PAGE       -->
+    <!-- ======================= -->
+    <div data-role="page" id="skills" data-theme="a">
+        
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>My Skills</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about" data-transition="slide" data-direction="reverse" data-icon="user">About Me</a></li>
+                    <li><a href="#projects" data-transition="slide" data-direction="reverse" data-icon="grid">Projects</a></li>
+                    <li><a href="#skills" class="ui-btn-active ui-state-persist" data-icon="star">Skills</a></li>
+                    <li><a href="#contact" data-transition="slide" data-icon="mail">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div role="main" class="ui-content">
+            <!-- Collapsible Sets for Skills Navigation -->
+            <div data-role="collapsibleset" data-theme="b" data-content-theme="a" class="custom-accordion">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>Frontend Development</h3>
+                    <p><strong>Languages:</strong> HTML5, CSS3, JavaScript (ES6+)</p>
+                    <p><strong>Frameworks:</strong> React, Vue, jQuery Mobile</p>
+                </div>
+                
+                <div data-role="collapsible">
+                    <h3>Backend Development</h3>
+                    <p><strong>Languages:</strong> Node.js, Python, PHP</p>
+                    <p><strong>Databases:</strong> MongoDB, MySQL, PostgreSQL</p>
+                </div>
+                
+                <div data-role="collapsible">
+                    <h3>Tools & Others</h3>
+                    <p><strong>VCS:</strong> Git & GitHub</p>
+                    <p><strong>Design:</strong> Figma, Adobe XD</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4 class="footer-text">&copy; 2026 John Doe</h4>
+        </div>
+    </div>
+
+
+    <!-- ======================= -->
+    <!--      CONTACT PAGE       -->
+    <!-- ======================= -->
+    <div data-role="page" id="contact" data-theme="a">
+        
+        <div data-role="header" data-position="fixed" data-theme="b">
+            <h1>Contact Me</h1>
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#about" data-transition="slide" data-direction="reverse" data-icon="user">About Me</a></li>
+                    <li><a href="#projects" data-transition="slide" data-direction="reverse" data-icon="grid">Projects</a></li>
+                    <li><a href="#skills" data-transition="slide" data-direction="reverse" data-icon="star">Skills</a></li>
+                    <li><a href="#contact" class="ui-btn-active ui-state-persist" data-icon="mail">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <div role="main" class="ui-content">
+            <p class="text-center">Have a question or want to work together? Drop a message!</p>
+            
+            <form action="#" method="post" class="custom-form">
+                <label for="fname">Full Name:</label>
+                <input type="text" name="fname" id="fname" placeholder="Enter your name" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" name="email" id="email" placeholder="Enter your email" required>
+
+                <label for="message">Message:</label>
+                <textarea name="message" id="message" placeholder="Type your message here..."></textarea>
+
+                <button type="submit" class="ui-btn ui-btn-b ui-corner-all ui-shadow action-btn mt-20" style="padding:10px 20px;">Send Message</button>
+            </form>
+            
+            <div class="social-links text-center">
+                <p>Or find me on:</p>
+                <a href="#" class="ui-btn ui-btn-inline ui-corner-all ui-icon-mail ui-btn-icon-notext social-icon">Email</a>
+                <a href="#" class="ui-btn ui-btn-inline ui-corner-all ui-icon-info ui-btn-icon-notext social-icon">LinkedIn</a>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4 class="footer-text">&copy; 2026 John Doe</h4>
+        </div>
+    </div>
+
+</body>
+</html>

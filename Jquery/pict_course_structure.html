@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Viewport configuration for mobile devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PICT Course Structure</title>
+    
+    <!-- 1. jQuery Mobile CSS Theme -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    
+    <!-- 2. jQuery Library (must be loaded before jQuery Mobile) -->
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    
+    <!-- 3. jQuery Mobile Library -->
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    
+    <style>
+        /* Minimal custom styling just to differentiate title and descriptions */
+        .subject-title {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin-bottom: 4px;
+        }
+        .subject-desc {
+            font-size: 0.9em;
+            color: #555;
+            white-space: normal; /* Prevents text from being truncated in list views */
+        }
+    </style>
+</head>
+<body>
+
+<!-- Single Page Application Container (`data-role="page"`) -->
+<div data-role="page" id="course_structure_page">
+
+    <!-- Header Section (`data-role="header"`) -->
+    <div data-role="header" data-theme="b"> <!-- 'b' is the dark theme for contrast -->
+        <h1>PICT Syllabus</h1>
+    </div>
+
+    <!-- Main Content Section (`data-role="main"`) -->
+    <div data-role="main" class="ui-content">
+        <h2>B.E. Computer Engineering</h2>
+        <p>Select an academic year to view its core subjects:</p>
+
+        <!-- Collapsible Set / Accordion (`data-role="collapsible-set"`) -->
+        <!-- Only one collapsible can be open at a time in a collapsible-set -->
+        <div data-role="collapsible-set">
+
+            <!-- First Year (FE) Collapsible Widget (`data-role="collapsible"`) -->
+            <!-- `data-collapsed="false"` keeps the first one open by default -->
+            <div data-role="collapsible" data-collapsed="false" data-theme="a" data-content-theme="a">
+                <h3>First Year (FE)</h3>
+                <!-- Listview inside collapsible for clean subject layout -->
+                <ul data-role="listview" data-inset="false">
+                    <li>
+                        <div class="subject-title">Engineering Mathematics I & II</div>
+                        <div class="subject-desc">Foundations of calculus, differential equations, and linear algebra.</div>
+                    </li>
+                    <li>
+                        <div class="subject-title">Basic Electrical Engineering</div>
+                        <div class="subject-desc">Introduction to basic electrical circuits and electromagnetism.</div>
+                    </li>
+                    <li>
+                        <div class="subject-title">Programming and Problem Solving</div>
+                        <div class="subject-desc">Fundamentals of programming using C, loops, arrays, and algorithms.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Second Year (SE) Collapsible Widget -->
+            <div data-role="collapsible" data-theme="a" data-content-theme="a">
+                <h3>Second Year (SE)</h3>
+                <ul data-role="listview" data-inset="false">
+                    <li>
+                        <div class="subject-title">Data Structures & Algorithms</div>
+                        <div class="subject-desc">Study of trees, graphs, hashing, and algorithm complexity.</div>
+                    </li>
+                    <li>
+                        <div class="subject-title">Object Oriented Programming</div>
+                        <div class="subject-desc">Core concepts like inheritance and polymorphism using C++/Java.</div>
+                    </li>
+                    <li>
+                        <div class="subject-title">Microprocessors</div>
+                        <div class="subject-desc">Architecture and assembly level programming for processors (e.g., 8086).</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Third Year (TE) Collapsible Widget -->
+            <div data-role="collapsible" data-theme="a" data-content-theme="a">
+                <h3>Third Year (TE)</h3>
+                <ul data-role="listview" data-inset="false">
+                    <li>
+                        <div class="subject-title">Database Management Systems</div>
+                        <div class="subject-desc">Relational models, SQL, normalization, and NoSQL databases.</div>
+                    </li>
+                    <li>
+                        <div class="subject-title">Computer Networks</div>
+                        <div class="subject-desc">OSI model, TCP/IP Suite, routing, and switching fundamentals.</div>
+                    </li>
+                    <li>
+                        <div class="subject-title">Theory of Computation</div>
+                        <div class="subject-desc">Automata, formal languages, Turing machines, and decodability.</div>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Final Year (BE) Collapsible Widget -->
+            <div data-role="collapsible" data-theme="a" data-content-theme="a">
+                <h3>Final Year (BE)</h3>
+                <ul data-role="listview" data-inset="false">
+                    <li>
+                        <div class="subject-title">Machine Learning</div>
+                        <div class="subject-desc">Supervised/unsupervised learning, neural networks, and AI fundamentals.</div>
+                    </li>
+                    <li>
+                        <div class="subject-title">Information & Cyber Security</div>
+                        <div class="subject-desc">Cryptography, network security protocols, and ethical hacking basics.</div>
+                    </li>
+                    <li>
+                        <div class="subject-title">Capstone Project</div>
+                        <div class="subject-desc">Practical application of engineering concepts to solve a real-world problem.</div>
+                    </li>
+                </ul>
+            </div>
+
+        </div> <!-- End of Collapsible Set -->
+    </div> <!-- End of Main -->
+
+    <!-- Footer Section (`data-role="footer"`) -->
+    <!-- `data-position="fixed"` keeps it pinned to the bottom -->
+    <div data-role="footer" data-position="fixed" data-theme="b">
+        <h4>&copy; 2026 PICT Pune</h4>
+    </div>
+
+</div>
+
+</body>
+</html>

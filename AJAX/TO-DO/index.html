@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AJAX To-Do List</title>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 20px auto; }
+        .task { display: flex; justify-content: space-between; align-items: center; padding: 10px; border-bottom: 1px solid #ccc; }
+        .task.completed span { text-decoration: line-through; color: #888; }
+        input[type="text"] { padding: 8px; width: 70%; }
+        button { padding: 8px 15px; cursor: pointer; }
+        .delete-btn { background: #ff4d4d; color: white; border: none; }
+    </style>
+</head>
+<body>
+
+    <h2>To-Do List</h2>
+    <div>
+        <input type="text" id="newTask" placeholder="Add a new task...">
+        <button onclick="addTask()">Add</button>
+    </div>
+    
+    <div id="taskList"></div>
+
+    <script>
+        const apiUrl = '/tasks';
+
+        // Load tasks on startup
+        function loadTasks() {
+            fetch(apiUrl)
+                .then(response => response.json())
+                .then(tasks => {
+                    const taskList = document.getElementById('taskList');
+                    taskList.innerHTML = '';
+                    tasks.forEach(task => renderTask(task));
+                });
+        }
+
+        // Render a single task to the DOM
+        function renderTask(task) {
+            const taskList = document.getElementById('taskList');
+            const div = document.createElement('div');
+            div.className = `task ${task.completed ? 'completed' : ''}`;
+            div.id = `task-${task.id}`;
+
+            div.innerHTML = `
+                <div>
+                    <input type="checkbox" ${task.completed ? 'checked' : ''} onchange="toggleTask(${task.id}, this.checked)">
+                    <span>${task.text}</span>
+                </div>
+                <button class="delete-btn" onclick="deleteTask(${task.id})">Delete</button>
+            `;
+            taskList.appendChild(div);
+        }
+
+        // Add a new task
+        function addTask() {
+            const input = document.getElementById('newTask');
+            const text = input.value.trim();
+            if (!text) return;
+
+            fetch(apiUrl, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ text: text })
+            })
+            .then(response => response.json())
+            .then(task => {
+                renderTask(task);
+                input.value = '';
+            });
+        }
+
+        // Toggle task completion (Update)
+        function toggleTask(id, completed) {
+            fetch(`${apiUrl}/${id}`, {
+                method: 'PUT',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ completed: completed })
+            })
+            .then(response => response.json())
+            .then(task => {
+                const taskDiv = document.getElementById(`task-${id}`);
+                if (task.completed) {
+                    taskDiv.classList.add('completed');
+                } else {
+                    taskDiv.classList.remove('completed');
+                }
+            });
+        }
+
+        // Delete a task
+        function deleteTask(id) {
+            fetch(`${apiUrl}/${id}`, {
+                method: 'DELETE'
+            })
+            .then(() => {
+                const taskDiv = document.getElementById(`task-${id}`);
+                if (taskDiv) {
+                    taskDiv.remove();
+                }
+            });
+        }
+
+        // Initialize
+        loadTasks();
+    </script>
+</body>
+</html>

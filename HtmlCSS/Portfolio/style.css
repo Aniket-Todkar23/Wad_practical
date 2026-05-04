@@ -1,0 +1,105 @@
+/* Basic reset for consistent spacing */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Base body styles & Centering */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+    background-color: #f9f9f9;
+    color: #333;
+    text-align: center; /* This centers all the text easily */
+}
+
+/* Header styles */
+header {
+    background-color: #2c3e50;
+    color: white;
+    padding: 30px 0;
+}
+
+header h1 {
+    margin-bottom: 15px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+    color: #3498db;
+}
+
+/* Main content wrapper */
+main {
+    max-width: 800px; /* Keeps content from stretching too wide */
+    margin: 30px auto; /* Centers the main block horizontally */
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+/* Section styling */
+section {
+    padding: 30px 0;
+    border-bottom: 1px solid #eee;
+}
+
+section:last-child {
+    border-bottom: none;
+}
+
+h2 {
+    color: #2c3e50;
+    margin-bottom: 20px;
+}
+
+/* Skills list styling */
+.skills-list {
+    list-style-type: none; /* Removes bullet points */
+}
+
+.skills-list li {
+    display: inline-block; /* Aligns items elegantly in a row */
+    background-color: #3498db;
+    color: white;
+    padding: 8px 15px;
+    margin: 5px;
+    border-radius: 20px; /* Pills shape */
+}
+
+/* Project styling */
+.project {
+    margin-bottom: 20px;
+}
+
+.project h3 {
+    color: #3498db;
+    margin-bottom: 5px;
+}
+
+/* Link styling */
+a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styles */
+footer {
+    background-color: #2c3e50;
+    color: white;
+    padding: 15px 0;
+    margin-top: 40px;
+}

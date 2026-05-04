@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration & Login</title>
+    <style>
+        body { font-family: Arial, sans-serif; display: flex; justify-content: center; gap: 50px; padding: 20px; background-color: #f4f4f4; }
+        .form-container { background: white; padding: 20px; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); width: 350px; }
+        .form-group { margin-bottom: 15px; }
+        .form-group label { display: block; margin-bottom: 5px; }
+        .form-group input, .form-group textarea { width: 100%; padding: 8px; box-sizing: border-box; }
+        .error { color: red; font-size: 0.85em; display: none; }
+        button { width: 100%; padding: 10px; background: #28a745; color: white; border: none; border-radius: 4px; cursor: pointer; }
+        button:hover { background: #218838; }
+        .nav-link { display: block; text-align: center; margin-top: 15px; text-decoration: none; color: #007bff; }
+    </style>
+</head>
+<body>
+
+    <!-- Registration Form -->
+    <div class="form-container">
+        <h2>Register</h2>
+        <form id="registerForm">
+            <div class="form-group">
+                <label>Name</label>
+                <input type="text" id="regName" required pattern="[a-zA-Z\s]+" title="Only letters and spaces allowed">
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" id="regEmail" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="regPassword" required minlength="6">
+            </div>
+            <div class="form-group">
+                <label>Mobile Number</label>
+                <input type="tel" id="regMobile" required pattern="[0-9]{10}" title="Enter a valid 10-digit mobile number">
+            </div>
+            <div class="form-group">
+                <label>Date of Birth</label>
+                <input type="date" id="regDob" required>
+            </div>
+            <div class="form-group">
+                <label>City</label>
+                <input type="text" id="regCity" required>
+            </div>
+            <div class="form-group">
+                <label>Address</label>
+                <textarea id="regAddress" rows="3" required></textarea>
+            </div>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+
+    <!-- Login Form -->
+    <div class="form-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <div class="form-group">
+                <label>Email (Username)</label>
+                <input type="email" id="loginEmail" required>
+            </div>
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password" id="loginPassword" required>
+            </div>
+            <button type="submit">Login</button>
+            <p id="loginError" class="error">Invalid credentials</p>
+        </form>
+        <a href="list.html" class="nav-link">View Registered Users List</a>
+    </div>
+
+    <script>
+        // Handle Registration
+        document.getElementById('registerForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent page reload
+
+            const userData = {
+                name: document.getElementById('regName').value.trim(),
+                email: document.getElementById('regEmail').value.trim(),
+                password: document.getElementById('regPassword').value,
+                mobile: document.getElementById('regMobile').value.trim(),
+                dob: document.getElementById('regDob').value,
+                city: document.getElementById('regCity').value.trim(),
+                address: document.getElementById('regAddress').value.trim()
+            };
+
+            // AJAX POST Request
+            fetch('/api/register', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(userData)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Registration successful! You can now log in or view the list.');
+                    document.getElementById('registerForm').reset();
+                } else {
+                    alert(data.message);
+                }
+            })
+            .catch(err => console.error('Error:', err));
+        });
+
+        // Handle Login
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent page reload
+
+            const loginData = {
+                username: document.getElementById('loginEmail').value.trim(),
+                password: document.getElementById('loginPassword').value
+            };
+
+            // AJAX POST Request
+            fetch('/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(loginData)
+            })
+            .then(res => res.json())
+            .then(data => {
+                if (data.success) {
+                    alert('Login successful! Redirecting to users list...');
+                    window.location.href = 'list.html';
+                } else {
+                    const errEl = document.getElementById('loginError');
+                    errEl.style.display = 'block';
+                    errEl.innerText = data.message;
+                }
+            })
+            .catch(err => console.error('Error:', err));
+        });
+    </script>
+</body>
+</html>

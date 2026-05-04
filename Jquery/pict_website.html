@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>PICT Mobile Website</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Include jQuery Mobile stylesheets -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    <!-- Include the jQuery library -->
+    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <!-- Include the jQuery Mobile library -->
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+    <style>
+        /* Simple styling to make it look nicer */
+        .page-header { background-color: #004d99 !important; color: white !important; text-shadow: none !important; }
+        .pict-logo { display: block; margin: 20px auto; max-width: 150px; }
+        .text-center { text-align: center; }
+        .contact-info { padding: 15px; margin-top: 10px; background: #eef5fb; border-radius: 8px; border: 1px solid #d0e3f5; }
+    </style>
+</head>
+<body>
+
+    <!-- ======================= HOME PAGE (INCLUDES ABOUT US) ======================= -->
+    <div data-role="page" id="home">
+        <div data-role="header" class="page-header" data-theme="b">
+            <h1>Welcome to PICT</h1>
+        </div>
+
+        <div data-role="content">
+            <h2 class="text-center">Pune Institute of Computer Technology</h2>
+            <!-- Placeholder logo -->
+            <img src="./pict.jpg" alt="PICT Logo" class="pict-logo">
+            <p class="text-center">Empowering minds, creating innovators since 1983.</p>
+            
+            <!-- About Us Content inside Homepage -->
+            <h3>About Us</h3>
+            <p>Pune Institute of Computer Technology (PICT) is a premier engineering college established in 1983. It is renowned for its excellence in computer engineering, IT, and EnTC.</p>
+            
+            <h4>Vision</h4>
+            <p>Pune Institute of Computer Technology aspires to be the leader in higher education and research of International repute.</p>
+            
+            <h4>Mission</h4>
+            <p>To be the leading and most sought after institute in education & research in holistic development.</p>
+            
+            <br>
+
+            <!-- Listview for Main Menu linked to other pages -->
+           
+        </div>
+
+        <!-- Navbar for global navigation at the bottom -->
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <div data-role="navbar">
+                <ul>
+                    <!-- ui-btn-active makes it look selected on the home page -->
+                    <li><a href="#home" data-icon="home" class="ui-btn-active" data-transition="fade">Home</a></li>
+                    <li><a href="#courses" data-icon="grid" data-transition="fade">Courses</a></li>
+                    <li><a href="#contact" data-icon="info" data-transition="fade">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= COURSES OFFERED PAGE ======================= -->
+    <div data-role="page" id="courses">
+        <div data-role="header" class="page-header" data-add-back-btn="true" data-theme="b">
+            <h1>Courses Offered</h1>
+        </div>
+
+        <div data-role="content">
+            <p>We offer undergraduate and postgraduate programs:</p>
+
+            <!-- Collapsible Set (Accordion behavior) -->
+            <div data-role="collapsible-set" data-theme="b" data-content-theme="a">
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>Undergraduate (B.E)</h3>
+                    <ul>
+                        <li>Computer Engineering (CE)</li>
+                        <li>Information Technology (IT)</li>
+                        <li>Electronics & Telecommunication (E&TC)</li>
+                        <li>Artificial Intelligence & Data Science (AI & DS)</li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Postgraduate (M.E)</h3>
+                    <ul>
+                        <li>Computer Engineering</li>
+                        <li>Data Science</li>
+                        <li>Electronics & Communication</li>
+                    </ul>
+                </div>
+                <div data-role="collapsible">
+                    <h3>Ph.D. Programs</h3>
+                    <p>Research centers available for Ph.D. in Computer Engineering and E&TC.</p>
+                </div>
+            </div>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home" data-transition="fade">Home</a></li>
+                    <li><a href="#departments" data-icon="grid" data-transition="fade">Depts</a></li>
+                    <li><a href="#contact" data-icon="info" data-transition="fade">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= DEPARTMENTS PAGE ======================= -->
+    <div data-role="page" id="departments">
+        <div data-role="header" class="page-header" data-add-back-btn="true" data-theme="b">
+            <h1>Departments</h1>
+        </div>
+
+        <div data-role="content">
+            <!-- Listview with dividers -->
+            <ul data-role="listview" data-inset="true">
+                <li data-role="list-divider">Engineering Departments</li>
+                <li>
+                    <h2>Computer Engineering</h2>
+                    <p>Focuses on advanced software and hardware concepts.</p>
+                </li>
+                <li>
+                    <h2>Information Technology</h2>
+                    <p>Specializes in network, security, and web technologies.</p>
+                </li>
+                <li>
+                    <h2>Electronics & Telecommunication</h2>
+                    <p>Covers signal processing, embedded systems, and communication.</p>
+                </li>
+                <li>
+                    <h2>First Year Engineering (F.E.)</h2>
+                    <p>Foundational engineering sciences.</p>
+                </li>
+            </ul>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home" data-transition="fade">Home</a></li>
+                    <li><a href="#courses" data-icon="grid" data-transition="fade">Courses</a></li>
+                    <li><a href="#contact" data-icon="info" data-transition="fade">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= CONTACT INFO PAGE ======================= -->
+    <div data-role="page" id="contact">
+        <div data-role="header" class="page-header" data-add-back-btn="true" data-theme="b">
+            <h1>Contact Info</h1>
+        </div>
+
+        <div data-role="content">
+            <div class="contact-info">
+                <h3>Pune Institute of Computer Technology</h3>
+                <p><strong>Address:</strong> Survey No. 27, Near Trimurti Chowk, Dhankawadi, Pune, Maharashtra 411043</p>
+                <p><strong>Phone:</strong> +91-20-24371101 / +91-20-24361732</p>
+                <p><strong>Email:</strong> principal@pict.edu</p>
+                <p><strong>Website:</strong> <a href="https://pict.edu">www.pict.edu</a></p>
+            </div>
+
+            <a href="tel:+912024371101" data-role="button" data-icon="phone" data-theme="b">Call Now</a>
+            <a href="mailto:principal@pict.edu" data-role="button" data-icon="mail" data-theme="b">Send Email</a>
+        </div>
+
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#home" data-icon="home" data-transition="fade">Home</a></li>
+                    <li><a href="#departments" data-icon="grid" data-transition="fade">Depts</a></li>
+                    <li><a href="#courses" data-icon="grid" data-transition="fade">Courses</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

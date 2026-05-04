@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> PICT courses</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+        <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+        <style>
+            .heading{
+                background-color: rgba(9, 204, 230,0.5);
+                max-width: 450px;
+                width: 90%;
+                box-sizing: border-box;
+                border: solid;
+                align-items: center;
+                border-radius: 50px;
+                padding: 1px 1px 5px 10px;
+                margin: 10px auto;
+                text-align: center;
+            }
+            .para{
+                color: brown;
+            }
+            .subject-title{
+                font-family: sans-serif;
+                font-weight: bold;
+                font-style: italic;
+                font-size: 1rem;
+            }
+            .subject-desc{
+                font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+                font-size: medium;
+                white-space: normal;
+            }
+        </style>
+    </head>
+    <body>
+       
+         <!-- main container -->
+        <div data-role="page" id="comp">
+            <div data-role="header" data-theme="b">
+                <h1>PICT SYLLABUS</h1>
+                 <div data-role="navbar">
+                    <ul>
+                        <li><a href="#comp"  class="ui-btn-active ui-state-persist">Computer</a></li>
+                        <li><a href="#it">IT</a></li>
+                        <li><a href="#entc">EnTC</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="main" class="heading" class="ui-content">
+                <h2 >B.E. Computer Engineering</h2>
+                <p class="para">Select the required academic year to view the Syllabus</p>
+            </div>
+            <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false" data-theme="a">
+                        <h3>First Year </h3>
+                        <ul data-role="listview" >
+                            <li>
+                                <div class="subject-title">Chemistry</div>
+                                <div class="subject-desc">Foundations of chemistry, chemical reations, and Acid and Bases.</div>
+                            </li>
+                            <li>
+                                <div class="subject-title">Maths</div>
+                                <div class="subject-desc">Foundations of calculus, differential equations, and linear algebra.</div>
+                            </li>
+                            <li>
+                                <div class="subject-title">Programming and problem solving</div>
+                                <div class="subject-desc">Fundamentals of programming using C, loops, arrays, and algorithms.</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>Second Year </h3>
+                        <ul data-role="listview" >
+                            <li>
+                                <div class="subject-title">Data Structures & Algorithms</div>
+                                <div class="subject-desc">Study of trees, graphs, hashing, and algorithm complexity.</div>
+                            </li>
+                            <li>
+                                <div class="subject-title">Object Oriented Programming
+                                <div class="subject-desc">Core concepts like inheritance and polymorphism using C++/Java.</div>
+                            </li>
+                            <li>
+                                <div class="subject-title">Microprocessors</div>
+                                <div class="subject-desc">Architecture and assembly level programming for processors (e.g., 8086).</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+          
+            <div data-role="footer">
+
+            </div>
+        </div>
+         <div data-role="page" id="it">
+            <div data-role="header" data-theme="b">
+                <h1>PICT SYLLABUS</h1>
+                 <div data-role="navbar">
+                    <ul>
+                        <li><a href="#comp" >Computer</a></li>
+                        <li><a href="#it" class="ui-btn-active ui-state-persist">IT</a></li>
+                        <li><a href="#entc">EnTC</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div data-role="main" class="heading">
+                <h2 >B.E. INFORMATION TECHNOLOGY</h2>
+                <p class="para">Select the required academic year to view the Syllabus</p>
+            </div>
+            <div data-role="collapsible-set">
+                    <div data-role="collapsible" data-collapsed="false" data-theme="a">
+                        <h3>First Year </h3>
+                        <ul data-role="listview" >
+                            <li>
+                                <div class="subject-title">Chemistry</div>
+                                <div class="subject-desc">Foundations of chemistry, chemical reations, and Acid and Bases.</div>
+                            </li>
+                            <li>
+                                <div class="subject-title">Maths</div>
+                                <div class="subject-desc">Foundations of calculus, differential equations, and linear algebra.</div>
+                            </li>
+                            <li>
+                                <div class="subject-title">Programming and problem solving</div>
+                                <div class="subject-desc">Fundamentals of programming using C, loops, arrays, and algorithms.</div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div data-role="collapsible">
+                        <h3>Second Year </h3>
+                        <ul data-role="listview" >
+                            <li>
+                                <div class="subject-title">Data Structures & Algorithms</div>
+                                <div class="subject-desc">Study of trees, graphs, hashing, and algorithm complexity.</div>
+                            </li>
+                            <li>
+                                <div class="subject-title">Object Oriented Programming
+                                <div class="subject-desc">Core concepts like inheritance and polymorphism using C++/Java.</div>
+                            </li>
+                            <li>
+                                <div class="subject-title">Microprocessors</div>
+                                <div class="subject-desc">Architecture and assembly level programming for processors (e.g., 8086).</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+            </div>
+          
+            <div data-role="footer">
+
+            </div>
+        </div>
+    </body>
+</html>
