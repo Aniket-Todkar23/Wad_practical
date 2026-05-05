@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <h2>User App</h2>
+  <div class="nav-links">
+    @if (!auth.currentUser()) {
+      <a routerLink="/login">Login</a>
+      <a routerLink="/register">Register</a>
+    }
+    @else {
+      <a routerLink="/profile">Profile</a>
+      <a (click)="logout()" class="logout-btn">Logout</a>
+    }
+  </div>
+</nav>
+
+<div class="container">
+  <router-outlet></router-outlet>
+</div>

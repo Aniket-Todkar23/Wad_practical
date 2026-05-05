@@ -1,0 +1,10 @@
+{
+  "name": "product-app",
+  "version": "1.0.0",
+  "description": "Node.js Product API",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {}
+}

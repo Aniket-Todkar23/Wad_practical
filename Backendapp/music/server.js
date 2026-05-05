@@ -80,13 +80,11 @@ app.get('/', async (req, res) => {
     res.send(tableHtml + testingLinks);
 });
 
-// e) List specified Music Director songs
 app.get('/director/:director', async (req, res) => {
     const songs = await Song.find({ Music_director: req.params.director });
     res.send(renderTable(songs, `Songs by Music Director: ${req.params.director}`));
 });
 
-// f) List specified Music Director songs sung by specified Singer
 app.get('/director/:director/singer/:singer', async (req, res) => {
     const songs = await Song.find({ 
         Music_director: req.params.director, 
@@ -95,7 +93,6 @@ app.get('/director/:director/singer/:singer', async (req, res) => {
     res.send(renderTable(songs, `Songs by ${req.params.director} sung by ${req.params.singer}`));
 });
 
-// i) List Songs sung by Specified Singer from specified film
 app.get('/singer/:singer/film/:film', async (req, res) => {
     const songs = await Song.find({ 
         singer: req.params.singer, 
@@ -104,7 +101,6 @@ app.get('/singer/:singer/film/:film', async (req, res) => {
     res.send(renderTable(songs, `Songs sung by ${req.params.singer} from ${req.params.film}`));
 });
 
-// g) Delete the song which you don’t like (Using GET for easy browser testing)
 app.get('/delete/:id', async (req, res) => {
     try {
         await Song.findByIdAndDelete(req.params.id);
@@ -114,7 +110,6 @@ app.get('/delete/:id', async (req, res) => {
     }
 });
 
-// h) Add new song which is your favourite (Using GET query params for easy browser testing)
 app.get('/add', async (req, res) => {
     try {
         const { Songname, Film, Music_director, singer } = req.query;
@@ -129,7 +124,6 @@ app.get('/add', async (req, res) => {
     }
 });
 
-// j) Update the document by adding Actor and Actress name (Using GET query params)
 app.get('/update/:id', async (req, res) => {
     try {
         const { Actor, Actress } = req.query;

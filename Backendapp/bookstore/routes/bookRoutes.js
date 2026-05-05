@@ -51,3 +51,59 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// curl -X POST http://localhost:3000/api/books \
+// -H "Content-Type: application/json" \
+// -d '{
+//   "title": "The Hitchhiker'\''s Guide to the Galaxy",
+//   "author": "Douglas Adams",
+//   "price": 19.99,
+//   "genre": "Science Fiction"
+// }'
+
+// curl -X GET http://localhost:3000/api/books
+
+// curl -X PUT http://localhost:3000/api/books/<BOOK_ID> \
+// -H "Content-Type: application/json" \
+// -d '{
+//   "price": 24.99,
+//   "genre": "Sci-Fi Comedy"
+// }'
+
+// curl -X DELETE http://localhost:3000/api/books/<BOOK_ID>

@@ -53,3 +53,87 @@ router.delete('/:id', async (req, res) => {
 });
 
 module.exports = router;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// curl -X POST http://localhost:3000/api/employees \
+// -H "Content-Type: application/json" \
+// -d '{
+//   "name": "Jane Doe",
+//   "department": "Engineering",
+//   "designation": "Software Engineer",
+//   "salary": 85000,
+//   "joiningDate": "2024-01-15T00:00:00.000Z"
+// }'
+
+
+// curl -X GET http://localhost:3000/api/employees
+
+// curl -X PUT http://localhost:3000/api/employees/<EMPLOYEE_ID> \
+// -H "Content-Type: application/json" \
+// -d '{
+//   "salary": 95000,
+//   "designation": "Senior Software Engineer"
+// }'
+
+
+
+
+
+
+
+
+
+
+
+
+// curl -X DELETE http://localhost:3000/api/employees/<EMPLOYEE_ID>

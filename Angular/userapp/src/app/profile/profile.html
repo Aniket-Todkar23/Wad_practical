@@ -1,0 +1,13 @@
+@if (auth.currentUser(); as user) {
+  <div class="card">
+    <h2>User Profile</h2>
+    <div class="profile-info">
+      <p><strong>Name:</strong> {{ user.name }}</p>
+      <p><strong>Email:</strong> {{ user.email }}</p>
+    </div>
+  </div>
+} @else {
+  <div class="card">
+    <h2>Please Log In</h2>
+  </div>
+}

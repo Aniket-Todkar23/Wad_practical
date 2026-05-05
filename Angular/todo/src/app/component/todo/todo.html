@@ -1,0 +1,22 @@
+<div class="card">
+  <h2>My To-Do List</h2>
+
+  <div class="input-box">
+    <input #t type="text" placeholder="Enter task">
+
+    <button (click)="addTask(t)">
+      {{ editIndex === -1 ? 'Add' : 'Update' }}
+    </button>
+  </div>
+
+  <ul>
+    <li *ngFor="let x of tasks; let i = index">
+      {{ x }}
+
+      <div>
+        <button (click)="editTask(i, t)">Edit</button>
+        <button (click)="deleteTask(i)">X</button>
+      </div>
+    </li>
+  </ul>
+</div>

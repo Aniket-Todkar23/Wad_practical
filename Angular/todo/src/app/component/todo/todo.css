@@ -1,0 +1,31 @@
+.card {
+  width: 350px;
+  margin: 80px auto;
+  padding: 20px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px gray;
+  text-align: center;
+}
+
+.input-box {
+  display: flex;
+  justify-content: space-between;
+}
+
+input {
+  width: 70%;
+  padding: 8px;
+}
+
+button {
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+li {
+  list-style: none;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+}
