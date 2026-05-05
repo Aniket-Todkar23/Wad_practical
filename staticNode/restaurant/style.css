@@ -1,0 +1,163 @@
+/* Minimal, Aligned, Aesthetic Styling */
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #222;
+    --muted-color: #666;
+    --accent-color: #111;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+
+a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: opacity 0.2s ease;
+}
+
+a:hover {
+    opacity: 0.6;
+}
+
+/* Typography */
+h1, h2, h3 {
+    font-weight: 500;
+    margin: 0;
+    color: var(--accent-color);
+}
+
+p {
+    margin: 0 0 1rem 0;
+    color: var(--muted-color);
+}
+
+/* Layout */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.nav {
+    display: flex;
+    gap: 30px;
+}
+
+.nav a {
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+
+
+/* Sections */
+.section {
+    margin-bottom: 100px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    text-transform: lowercase;
+    font-style: italic;
+    letter-spacing: 2px;
+}
+
+/* Story */
+.story-content {
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+}
+
+/* Dishes Grid */
+.dishes-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 40px;
+    text-align: left;
+}
+
+.dish-card {
+    display: flex;
+    flex-direction: column;
+}
+
+.dish-img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-bottom: 20px;
+}
+
+.dish-name {
+    font-size: 1.2rem;
+    margin-bottom: 8px;
+}
+
+.dish-desc {
+    font-size: 0.95rem;
+    margin-bottom: 0;
+}
+
+/* Footer */
+.footer {
+    text-align: center;
+    padding: 80px 20px 40px;
+    border-top: 1px solid #eaeaea;
+}
+
+.footer-title {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.copyright {
+    margin-top: 40px;
+    font-size: 0.8rem;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 20px;
+    }
+    
+    .hero-img {
+        height: 40vh;
+    }
+    
+    .dishes-grid {
+        grid-template-columns: 1fr;
+    }
+}

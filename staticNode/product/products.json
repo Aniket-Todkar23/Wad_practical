@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "name": "Wireless Noise-Cancelling Headphones",
+        "price": 299.99,
+        "image": "https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        "id": 2,
+        "name": "Minimalist Smartwatch",
+        "price": 199.50,
+        "image": "https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        "id": 3,
+        "name": "Mechanical Keyboard",
+        "price": 145.00,
+        "image": "https://images.unsplash.com/photo-1595225476474-87563907a212?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        "id": 4,
+        "name": "Aesthetic Desk Lamp",
+        "price": 85.00,
+        "image": "https://images.unsplash.com/photo-1507473885765-e6ed057f782c?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        "id": 5,
+        "name": "Portable Bluetooth Speaker",
+        "price": 59.99,
+        "image": "https://images.unsplash.com/photo-1608043152269-423dbba4e7e1?auto=format&fit=crop&w=500&q=80"
+    },
+    {
+        "id": 6,
+        "name": "Premium Leather Wallet",
+        "price": 45.00,
+        "image": "https://images.unsplash.com/photo-1627123424574-724758594e93?auto=format&fit=crop&w=500&q=80"
+    }
+]

@@ -13,6 +13,9 @@ app.use(cors());
 app.use(express.json());
 
 // Routes
+app.get('/', (req, res) => {
+    res.send('Employee API is running');
+});
 app.use('/api/employees', employeeRoutes);
 
 // MongoDB Connection

@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>PICT Student Clubs</title>
+    
+    <!-- jQuery Mobile CDN Links -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        .club-img { 
+            width: 100%; 
+            max-height: 250px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        .achievements { 
+            background: #e9ecef; 
+            padding: 15px; 
+            border-left: 5px solid #0056b3; 
+            border-radius: 4px;
+        }
+        .header-logo {
+            max-height: 40px;
+            vertical-align: middle;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======================= -->
+    <!--       HOME PAGE         -->
+    <!-- ======================= -->
+    <div data-role="page" id="home" data-theme="a">
+        <div data-role="header" data-theme="b">
+            <h1>PICT Extracurriculars</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <div style="text-align: center; margin-bottom: 20px;">
+                <img src="images/pict.jpeg" alt="PICT Logo" style="max-width: 150px;">
+                <h2>Student Clubs</h2>
+                <p>Explore extracurricular activities and find your community at PICT!</p>
+            </div>
+            
+            <ul data-role="listview" data-inset="true">
+                <li>
+                    <a href="#coding">
+                        <img src="images/coding.jpeg" class="ui-li-thumb">
+                        <h2>Coding Club</h2>
+                        <p>Programming and Hackathons</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#robotics">
+                        <img src="images/robotics.jpeg" class="ui-li-thumb">
+                        <h2>Robotics Club</h2>
+                        <p>Hardware and Automation</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#dance">
+                        <img src="images/dance.jpeg" class="ui-li-thumb">
+                        <h2>Dance Club</h2>
+                        <p>Cultural and Performing Arts</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4>&copy; PICT Clubs</h4>
+        </div>
+    </div>
+
+    <!-- ======================= -->
+    <!--     CODING CLUB PAGE    -->
+    <!-- ======================= -->
+    <div data-role="page" id="coding" data-theme="a">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="carat-l" data-rel="back">Back</a>
+            <h1>Coding Club</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <img src="images/coding.jpeg" alt="Coding Club" class="club-img">
+            <h3>Description</h3>
+            <p>The PICT Coding Club is the hub for software enthusiasts. We host weekly coding contests, peer-to-peer mentoring sessions, and development bootcamps covering web, app, and competitive programming.</p>
+            
+            <h3>Achievements</h3>
+            <div class="achievements">
+                <ul data-role="listview" data-inset="true">
+                    <li>1st Place at Smart India Hackathon 2024</li>
+                    <li>Hosted Pune's largest student hackathon</li>
+                    <li>Top 50 in ACM ICPC Regionals</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= -->
+    <!--    ROBOTICS CLUB PAGE   -->
+    <!-- ======================= -->
+    <div data-role="page" id="robotics" data-theme="a">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="carat-l" data-rel="back">Back</a>
+            <h1>Robotics Club</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <img src="images/robotics.jpeg" alt="Robotics Club" class="club-img">
+            <h3>Description</h3>
+            <p>The PICT Robotics Club is dedicated to designing, building, and programming intelligent machines. We provide hands-on experience with microcontrollers, IoT, sensors, and machine learning integration.</p>
+            
+            <h3>Achievements</h3>
+            <div class="achievements">
+                <ul data-role="listview" data-inset="true">
+                    <li>ABU Robocon National Finalists 2023</li>
+                    <li>Best Automation Bot at TechFest</li>
+                    <li>Launched standard autonomous campus guide bot</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- ======================= -->
+    <!--      DANCE CLUB PAGE    -->
+    <!-- ======================= -->
+    <div data-role="page" id="dance" data-theme="a">
+        <div data-role="header" data-theme="b">
+            <a href="#home" data-icon="carat-l" data-rel="back">Back</a>
+            <h1>Dance Club</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <img src="images/dance.jpeg" alt="Dance Club" class="club-img">
+            <h3>Description</h3>
+            <p>The Dance Club is where creativity meets motion. We embrace various styles including classical, hip-hop, contemporary, and folk. We participate in inter-college fests and organizing cultural nights.</p>
+            
+            <h3>Achievements</h3>
+            <div class="achievements">
+                <ul data-role="listview" data-inset="true">
+                    <li>Winners of Firodiya Karandak 2024</li>
+                    <li>Gold Medalists at Sinhgad Karandak</li>
+                    <li>Performed dynamically at Pune Festival</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

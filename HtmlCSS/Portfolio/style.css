@@ -56,6 +56,10 @@ section {
 section:last-child {
     border-bottom: none;
 }
+.about{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
 
 h2 {
     color: #2c3e50;
@@ -64,9 +68,16 @@ h2 {
 
 /* Skills list styling */
 .skills-list {
-    list-style-type: none; /* Removes bullet points */
+    list-style-type: style type b;; /* Removes bullet points */
 }
-
+.profile-pic {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%; /* Makes the image circular */
+    object-fit: cover; /* Ensures the image covers the area without distortion */
+    margin-bottom: 20px;
+    display: flex;
+}
 .skills-list li {
     display: inline-block; /* Aligns items elegantly in a row */
     background-color: #3498db;

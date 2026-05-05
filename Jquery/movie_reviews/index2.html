@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Movie Reviews</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- jQuery Mobile -->
+<link rel="stylesheet" href="jquery.mobile-1.4.5.min.css">
+<script src="jquery-1.11.1.min.js"></script>
+<script src="jquery.mobile-1.4.5.min.js"></script>
+
+<style>
+body {
+    background: #e9e9e9;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Header */
+.ui-header {
+    background: #020617 !important;
+    color: white !important;
+    border: none;
+}
+
+/* Grid layout */
+.ui-content {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+/* Card */
+.card {
+    width: 200px;
+    margin: 12px;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #b0b0b0;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+
+/* Image */
+.card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Title */
+.title {
+    text-align: center;
+    color: rgb(19, 26, 89);
+    font-weight: bold;
+    padding: 8px;
+}
+
+/* Collapsible */
+.ui-collapsible-heading a {
+    background: #334155 !important;
+    color: rgb(225, 111, 111) !important;
+}
+
+.ui-collapsible-content {
+    background: #1e293b !important;
+    color: #e2e8f0;
+}
+
+/* Label */
+.label {
+    color: #020709;
+    font-weight: bold;
+}
+</style>
+
+</head>
+
+<body>
+
+<div data-role="page">
+
+<div data-role="header">
+<h1>🎬 Movie Reviews</h1>
+</div>
+
+<div class="ui-content">
+
+<!-- Movie 1 -->
+<div class="card">
+    <img src="images/movie1.jpeg">
+    <div class="title">Inception</div>
+    <div data-role="collapsible">
+        <h3>View Review</h3>
+        <p><span class="label">Genre:</span> Sci-Fi</p>
+        <p><span class="label">Summary:</span> A thief enters dreams to steal secrets.</p>
+        <p><span class="label">Review:</span> Mind-blowing concept and visuals.</p>
+    </div>
+</div>
+
+<!-- Movie 2 -->
+<div class="card">
+    <img src="images/movie2.jpeg">
+    <div class="title">Avengers</div>
+    <div data-role="collapsible">
+        <h3>View Review</h3>
+        <p><span class="label">Genre:</span> Action</p>
+        <p><span class="label">Summary:</span> Superheroes unite to save the world.</p>
+        <p><span class="label">Review:</span> Entertaining and action-packed.</p>
+    </div>
+</div>
+
+<!-- Movie 3 -->
+<div class="card">
+    <img src="images/movie3.jpeg">
+    <div class="title">3 Idiots</div>
+    <div data-role="collapsible">
+        <h3>View Review</h3>
+        <p><span class="label">Genre:</span> Drama</p>
+        <p><span class="label">Summary:</span> Story of engineering students.</p>
+        <p><span class="label">Review:</span> Inspiring and emotional.</p>
+    </div>
+</div>
+
+<!-- Movie 4 -->
+<div class="card">
+    <img src="images/movie4.jpeg">
+    <div class="title">KGF</div>
+    <div data-role="collapsible">
+        <h3>View Review</h3>
+        <p><span class="label">Genre:</span> Action</p>
+        <p><span class="label">Summary:</span> Rise of a powerful gangster.</p>
+        <p><span class="label">Review:</span> Powerful and intense story.</p>
+    </div>
+</div>
+
+<!-- Movie 5 -->
+<div class="card">
+    <img src="images/movie5.jpeg">
+    <div class="title">Interstellar</div>
+    <div data-role="collapsible">
+        <h3>View Review</h3>
+        <p><span class="label">Genre:</span> Sci-Fi</p>
+        <p><span class="label">Summary:</span> Space journey to save humanity.</p>
+        <p><span class="label">Review:</span> Emotional and visually stunning.</p>
+    </div>
+</div>
+
+</div>
+
+</div>
+
+</body>
+</html>

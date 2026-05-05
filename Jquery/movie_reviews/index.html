@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Movie Reviews</title>
+    
+    <!-- jQuery Mobile CDN Links -->
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+    <script src="https://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+
+    <style>
+        .movie-poster { 
+            width: 100%; 
+            max-height: 300px; 
+            object-fit: contain; /* 'contain' stops movie posters from getting cropped */
+            border-radius: 8px; 
+            margin-bottom: 15px; 
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background: #000; /* Black background for any empty space */
+        }
+        .review-box { 
+            background: #e9ecef; /* Inspired by the clubs index.html background */
+            padding: 15px; 
+            border-left: 5px solid #0056b3; /* Inspired by the clubs index.html border */
+            border-radius: 4px;
+            font-style: italic;
+            margin-top: 15px;
+            color: #333;
+        }
+        .genre {
+            display: inline-block;
+            background: #333;
+            color: white;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .text-center {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ======================= -->
+    <!--       HOME PAGE         -->
+    <!-- ======================= -->
+    <div data-role="page" id="home" data-theme="a">
+        <div data-role="header" data-theme="b">
+            <h1>Movie Reviews</h1>
+        </div>
+        <div role="main" class="ui-content">
+            <h2>Latest Reviews</h2>
+            <p>Check out our hot takes on the latest hits and all-time classics!</p>
+            
+            <div data-role="collapsibleset" data-theme="b" data-content-theme="a" class="custom-accordion">
+                
+                <!-- MOVIE 1 -->
+                <div data-role="collapsible" data-collapsed="false">
+                    <h3>Aladdin</h3>
+                    <div class="text-center">
+                        <img src="images/movie1.jpeg" alt="Aladdin Poster" class="movie-poster">
+                        <span class="genre">Fantasy / Adventure</span>
+                    </div>
+                    <p><strong>Summary:</strong> A kind-hearted street urchin and a power-hungry Grand Vizier vie for a magic lamp that has the power to make their deepest wishes come true.</p>
+                    <div class="review-box">
+                        <strong>Review:</strong> "Will Smith brings fantastic energy to the Genie, and the visuals are incredibly vibrant. A fun, nostalgic ride that captures the magic of the animated original while adding its own flair. 4.5/5 Stars!"
+                    </div>
+                </div>
+
+                <!-- MOVIE 2 -->
+                <div data-role="collapsible">
+                    <h3>Dhurandhar</h3>
+                    <div class="text-center">
+                        <img src="images/movie2.jpeg" alt="Dhurandhar Poster" class="movie-poster">
+                        <span class="genre">Action / Drama</span>
+                    </div>
+                    <p><strong>Summary:</strong> A gripping revenge story filled with intense action sequences, fiery explosions, and a lone warrior fighting against a corrupt underworld syndicate.</p>
+                    <div class="review-box">
+                        <strong>Review:</strong> "High-octane action from start to finish. The cinematography during the fight scenes is spectacular, even if the plot is a bit predictable. Perfect for adrenaline junkies. 3.5/5 Stars!"
+                    </div>
+                </div>
+
+                <!-- MOVIE 3 -->
+                <div data-role="collapsible">
+                    <h3>War</h3>
+                    <div class="text-center">
+                        <img src="images/movie3.jpeg" alt="War Poster" class="movie-poster">
+                        <span class="genre">Action / Spy</span>
+                    </div>
+                    <p><strong>Summary:</strong> An Indian intelligence agent goes rogue, forcing his former student to track him down and eliminate him in a globe-trotting game of cat and mouse.</p>
+                    <div class="review-box">
+                        <strong>Review:</strong> "Hrithik and Tiger deliver explosive performances! The plot twists keep you guessing until the end, and the stunts are straight out of Hollywood blockbusters. 4/5 Stars!"
+                    </div>
+                </div>
+
+                <!-- MOVIE 4 -->
+                <div data-role="collapsible">
+                    <h3>Survival Sci-Fi</h3>
+                    <div class="text-center">
+                        <img src="images/movie4.jpeg" alt="Bird Box etc Poster" class="movie-poster">
+                        <span class="genre">Sci-Fi / Horror</span>
+                    </div>
+                    <p><strong>Summary:</strong> A collection of the greatest survival stories, where humanity faces mysterious supernatural forces, global catastrophes, and terrifying isolation.</p>
+                    <div class="review-box">
+                        <strong>Review:</strong> "An intense look into apocalyptic cinema. These movies rely heavily on psychological tension rather than cheap jump scares. A must-watch for thrill-seekers! 4/5 Stars!"
+                    </div>
+                </div>
+
+                <!-- MOVIE 5 -->
+                <div data-role="collapsible">
+                    <h3>All-Time Classics</h3>
+                    <div class="text-center">
+                        <img src="images/movie5.jpeg" alt="Classics Poster" class="movie-poster">
+                        <span class="genre">Masterpieces</span>
+                    </div>
+                    <p><strong>Summary:</strong> A retrospective look at cinematic masterpieces that have defined generations, from mind-bending sci-fi to gripping historical dramas and iconic comedies.</p>
+                    <div class="review-box">
+                        <strong>Review:</strong> "These films represent the peak of storytelling. Timeless performances and iconic directions that every movie buff must experience at least once. 5/5 Stars!"
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div data-role="footer" data-position="fixed" data-theme="b">
+            <h4>&copy; 2026 Cinema Critic</h4>
+        </div>
+    </div>
+
+</body>
+</html>
